@@ -37,7 +37,7 @@ class ImgMediaCard extends React.Component{
         {id: 5, name: 'FLS', url: 'http://192.168.20.117', img: 'fls.png'}, 
         {id: 5, name: 'Rapid Fax', url: 'https://secure.rapidfax.com/UnifiedLogin.serv', img: 'rapidfax.jpg'}, 
         {id: 5, name: 'Paylocity', url: 'https://access.paylocity.com/', img: 'paylocity.jpg'}, 
-        {id: 5, name: 'Intranet', url: 'https://office.yourclg.com', img: 'intranet.jpg'},
+        {id: 5, name: 'Intranet', url: 'http://office.yourclg.com', img: 'intranet.jpg'},
         {id: 5, name: 'Colab', url: 'http://colab.yourclg.com', img: 'colab.png'},
         {id: 5, name: 'Referrals', url: 'http://referrals.consumerlaw.com', img: 'referrals.jpg'},
     ]

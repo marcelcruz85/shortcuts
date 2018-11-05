@@ -9,14 +9,8 @@ import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-const theme = createMuiTheme({
-  palette: {
-    primary: { main: '#2196f3' },
-    secondary: { main: '#11cb5f' },
-  },
-});
+
 
 const styles = theme => ({
   root: {
@@ -87,7 +81,6 @@ class SearchAppBar extends React.Component {
   render(){    
     const { classes } = this.props; 
     return (
-      <MuiThemeProvider theme={theme}>
         <div className={classes.root}>
           <AppBar position="static" color="primary">
             <Toolbar>
@@ -116,7 +109,6 @@ class SearchAppBar extends React.Component {
             </Toolbar>
           </AppBar>
         </div>
-      </MuiThemeProvider>
     );
   }
   

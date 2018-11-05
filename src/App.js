@@ -2,10 +2,19 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
 import SearchAppBar from './components/nav/nav';
-import ImgMediaCard from './components/shortcut/shortcut';
+import FullWidthTabs from './components/tabs/tabs';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: '#2196f3' },
+    secondary: { main: '#11cb5f' },
+  },
+});
 
 const styles = theme => ({
   root: {
@@ -31,23 +40,20 @@ class App extends React.Component {
 
 
     return (
-      <div className="App">      
-      <div className={classes.root}>
-      <Grid container spacing={12} justify="center">
-        <Grid item xs={12}>
-          <SearchAppBar></SearchAppBar>
-        </Grid>   
-        <Grid item xs={12} container spacing={12} justify="center">
-        <div className="image-logo">
-          <img src='/images/logo.png' className="logo" alt="logo" />
-        </div>  
+      <MuiThemeProvider theme={theme}>
+        <div className="App">      
+        <div className={classes.root}>
+        <Grid container spacing={12} justify="center">
+          <Grid item xs={12}>
+            <SearchAppBar></SearchAppBar>
+            <FullWidthTabs></FullWidthTabs>
+          </Grid>   
+          
         </Grid>
-        <ImgMediaCard></ImgMediaCard>
-        
-      </Grid>
-    </div>
-        
       </div>
+          
+        </div>
+      </MuiThemeProvider>
     );
   }
 }
