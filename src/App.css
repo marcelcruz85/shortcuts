@@ -1,5 +1,5 @@
 html{
-  background: #e5e5e5;
+  background: #fff;
 }
 
 .no-underline{
@@ -45,5 +45,9 @@ html{
 }
 
 .image-logo{
-  margin: 50px 0px 60px;
+  margin: 90px 0px 30px;
+}
+
+.searchbox{
+  margin: 10px 0px 70px;
 }

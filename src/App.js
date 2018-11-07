@@ -4,14 +4,14 @@ import './App.css';
 import SearchAppBar from './components/nav/nav';
 import FullWidthTabs from './components/tabs/tabs';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+// import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
   palette: {
-    primary: { main: '#2196f3' },
+    primary: { main: '#fff' },
     secondary: { main: '#11cb5f' },
   },
 });
@@ -25,9 +25,12 @@ const styles = theme => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  typography: {
+    useNextVariants: true,
+  },
 });
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -43,7 +46,7 @@ class App extends React.Component {
       <MuiThemeProvider theme={theme}>
         <div className="App">      
         <div className={classes.root}>
-        <Grid container spacing={12} justify="center">
+        <Grid container justify="center">
           <Grid item xs={12}>
             <SearchAppBar></SearchAppBar>
             <FullWidthTabs></FullWidthTabs>

@@ -6,9 +6,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import SkipNextIcon from '@material-ui/icons/SkipNext';
+import ResponsiveDialog from '../videos/videos';
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   card: {
@@ -31,39 +31,47 @@ const styles = theme => ({
     paddingBottom: theme.spacing.unit,
   },
   playIcon: {
-    height: 50,
-    width: 50,
+    height: 38,
+    width: 38,
   },
 });
 
-function MediaControlCard(props) {
-  const { classes, theme } = props;
-
-  return (
-      <Typography>Coming Soon</Typography>
-    // <Card className={classes.card}>
-    //   <div className={classes.details}>
-    //     <CardContent className={classes.content}>
-    //       <Typography component="h5" variant="h5">
-    //         Billing - SugarCRM            
-    //         <Typography color="textSecondary">
-    //             How to add services and create a new billing in SugarCRM
-    //         </Typography>
-    //       </Typography>
-    //     </CardContent>
-    //     <div className={classes.controls}>
-    //       <IconButton aria-label="Play/pause">
-    //         <PlayArrowIcon className={classes.playIcon} />
-    //       </IconButton>
-    //     </div>
-    //   </div>
-    //   <CardMedia
-    //     className={classes.cover}
-    //     image="/static/images/cards/live-from-space.jpg"
-    //     title="Live from space album cover"
-    //   />
-    // </Card>
-  );
+class MediaControlCard extends React.Component{
+    constructor(props) {
+        super(props);
+    }
+    render (){   
+        const { classes, theme } = this.props;
+        console.log(this)
+        return(
+            <div>
+                <Card className={classes.card}>
+                    <CardMedia
+                    className={classes.cover}
+                    image="/images/sugarbilling.png"
+                    title="Live from space album cover"
+                    />
+                    <div className={classes.details}>
+                        <CardContent className={classes.content}>
+                            <Typography component="h5" variant="h5">
+                                Live From Space
+                            </Typography>
+                            <Typography variant="subtitle1" color="textSecondary">
+                                Mac Miller
+                            </Typography>
+                        </CardContent>
+                        <div className={classes.controls}>
+                            <IconButton aria-label="Play/pause">
+                                <PlayArrowIcon className={classes.playIcon} />
+                            </IconButton>
+                        </div>
+                    </div>
+                </Card>
+                <Button>Open full-screen dialog</Button>
+                <ResponsiveDialog></ResponsiveDialog>
+            </div>
+        )
+    } 
 }
 
 MediaControlCard.propTypes = {
