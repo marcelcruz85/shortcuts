@@ -94,6 +94,12 @@ class SearchAppBar extends React.Component {
                 Consumer Law Group
               </Typography>
               <div className={classes.grow} />
+              <a href="https://translate.google.com">              
+                <i className="material-icons translate">
+                  g_translate                  
+                  {/* <Typography>Translate</Typography> */}
+                </i>
+              </a>
               {/* <div className={classes.search}>
               <form action='https://www.google.com/search' method='GET'>
                 <div className={classes.searchIcon}>
